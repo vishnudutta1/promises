@@ -14,9 +14,22 @@
     // steps of fetch
     // 0 >> get the right url
     // 1 >> if it is promise,handle the promise
-    // 3 >> .then & .catch /async await
+    // 2 >> .then & .catch /async await
 
     fetch("https://fakestoreapi.com/products")
-    console.log(fetch("https://fakestoreapi.com/products"))
+    .then(function(res){
+        return res.json();
+    })
+    .then(function(res){
+        console.log("res:",res);
+    });
+
+
+    // show all products in a grid format
+
+    // price,image,description,name of the product
+
+    
+    
 </script>
 </html>

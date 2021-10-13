@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #products{
+            padding: 10% 20% 10% 20%;
+            border: 1px solid black;
+            height: 600px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Local Storage </h1>
+
+    <div id = "products"></div>
+</body>
+</html>
+
+<script>
+    let data = [
+    {
+      name: "Earrings",
+      price: "5000",
+      img: "https://staticimg.titan.co.in/Tanishq/Catalog/500473HNAAAA09_1.jpg?impolicy=pqmed&imwidth=640",
+    },
+    {
+      name: "Necklace",
+      price: "50000",
+      img: "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/custom/g/GMS08260312C_354.JPG",
+    },
+    {
+      name: "Necklace",
+      price: "100000",
+      img: "https://staticimg.titan.co.in/Tanishq/Catalog/513213NFOAA40_1.jpg?impolicy=pqmed&imwidth=640",
+    },
+    {
+      name: "Bangles",
+      price: "70000",
+      img: "https://staticimg.titan.co.in/Tanishq/Catalog/512115VIH1A40_1.jpg?imwidth=640",
+    },
+    {
+      name: "Earrings",
+      price: "10000",
+      img: "https://staticimg.titan.co.in/Tanishq/Catalog/500473HNAAAA09_1.jpg?impolicy=pqmed&imwidth=640",
+    },
+    {
+      name: "Bangles",
+      price: "50000",
+      img: "https://staticimg.titan.co.in/Tanishq/Catalog/510899VHA2A00_1.jpg?impolicy=pqmed&imwidth=640",
+    },
+    {
+      name: "Necklace",
+      price: "100000",
+      img: "https://cf-cdn.pcjeweller.com/public/uploads/catalog/product/custom/z/ZTN00079-4__1280407685.jpg",
+    },
+    {
+      name: "Bangles",
+      price: "70000",
+      img: "https://staticimg.titan.co.in/Tanishq/Catalog/512115VIH1A40_1.jpg?imwidth=640",
+    }
+    ];
+
+    data.forEach(function(product){
+        console.log(product.name)
+
+    })
+</script>
