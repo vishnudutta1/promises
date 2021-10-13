@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #products{
+        display: grid;
+        grid-template-columns: repeat(4,25%);
+        margin: 5%;
+        grid-gap: 20px;
+    }
+    img{
+        width: 30%;
+        height: 150px;
+    }
+</style>
+<body>
+    <h1>fetch</h1>
+    <input type="text" id = "city" placeholder="Enter city Name">
+    <button onclick="getWeather()">Get Weather</button>
+    <div id = "data"></div>
+</body>
+<script>
+        async function getWeather(){
+            let res = await fetch("https://api.openweathermap.org/data/2.5/weather?q=pune&appid=231eb831787cf676196c8d7a39ad6b04")
+        
+            let data = await res.json();
+            console.log("data:",data);
+        }
+
+
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=pune&appid=231eb831787cf676196c8d7a39ad6b04')
+    .then(function(res){
+        return res.json();
+    })
+    .then(function(res){
+        console.log("res:",res)
+    })
+</script>
+</html>
+
