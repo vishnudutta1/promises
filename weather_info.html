@@ -26,22 +26,45 @@
     <div id = "data"></div>
 </body>
 <script>
+
+        let container = document.getElementById("data")
+
         async function getWeather(){
-            let res = await fetch("https://api.openweathermap.org/data/2.5/weather?q=pune&appid=231eb831787cf676196c8d7a39ad6b04")
+
+            let city = document.getElementById("city").value;
+
+            let res = await fetch(
+            'https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=231eb831787cf676196c8d7a39ad6b04')
         
             let data = await res.json();
-            console.log("data:",data);
+            //console.log("data:",data);
+
+            showWeather(data)
         }
 
 
 
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=pune&appid=231eb831787cf676196c8d7a39ad6b04')
-    .then(function(res){
-        return res.json();
-    })
-    .then(function(res){
-        console.log("res:",res)
-    })
+    // fetch('https://api.openweathermap.org/data/2.5/weather?q=pune&appid=231eb831787cf676196c8d7a39ad6b04')
+    // .then(function(res){
+    //     return res.json();
+    // })
+    // .then(function(res){
+    //     console.log("res:",res)
+    // })
+
+        function showWeather(weather){
+            let name = document.createElement("p")
+
+            name.innerText = weather.name
+
+            let temp = document.createElement("p")
+
+            temp.innerText = Math.round(weather.main.temp -273 ) + "C"
+
+            container.append(name,temp)
+        }
+
+
 </script>
 </html>
 
