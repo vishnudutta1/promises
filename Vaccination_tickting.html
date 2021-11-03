@@ -20,20 +20,27 @@
 
 <script>
     let queue=["messi","ronaldo","utkars","bittu"]
-    let vaccine = 
+
+    let vaccine_count = 15
+    
     function register(){
         var name = document.getElementById("name").value;
         //console.log(name)
         queue.push(name);
 
-        let message = '${name} your reg succesful.now go stand!';
+        console.log(queue)
+
+        startVaccination(queue);
+        
+
+        let message = `${name} your reg succesful.now go stand!`;
 
         alert(message);
 
         let Mypromise = new Promise(function(resolve,reject){
             setInterval(function(){
                 if(queue[0]===name){
-                resolve('${name} its your turn now')
+                resolve(`${name} its your turn now`)
             }
             },1000)
            
@@ -47,16 +54,30 @@
         });
     }
 
-
-    function startVaccination(){
+   
+    function startVaccination(queue){
         queue.shift();
+
+        vaccine_count--
+
+        console.log(vaccine_count)
+
+        
+
         if(queue.length===0){
             clearInterval(interval);
         }
         console.log("queue",queue)
+
+        
     }
 
-    startVaccination();
+    
+
+    if(vaccine_count==0){
+            alert ("Vaccine is Not Availaible")
+        }
+       
 
     let interval = setInterval(startVaccination,2000);
 
