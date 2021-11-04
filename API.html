@@ -62,6 +62,11 @@ let name = document.createElement("p");
 
 name.innerText = product.title;
 
+let button = document.createElement("button")
+
+button.innerText = 'Add To Cart'
+
+console.log(product.item)
 let price = document.createElement("p");
 
 price.innerText=product.price;
@@ -69,8 +74,8 @@ price.innerText=product.price;
 
 
 
-div.append(img,name,price);
-
+div.append(img,name,price,button);
+  container.append(div)  })
     }
 
 </script>
