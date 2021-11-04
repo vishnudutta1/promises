@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccination ticketing System</title>
+</head>
+<body>
+   
+        <input id = "name" type="text">
+       
+        <button onclick="register()">Order Food</button>
+
+        <!-- <input id = "vaccine" type="number"> -->
+        
+
+</body>
+</html>
+
+<script>
+    let queue=["messi","ronaldo","utkars","bittu"]
+
+    let vaccine_count = 15
+    
+    function register(){
+        var name = document.getElementById("name").value;
+        //console.log(name)
+        queue.push(name);
+
+        console.log(queue)
+
+        startVaccination(queue);
+        
+
+        let message = `${name} your reg succesful.now go stand!`;
+
+        alert(message);
+
+        let Mypromise = new Promise(function(resolve,reject){
+            setInterval(function(){
+                if(queue[0]===name){
+                resolve(`${name} its your turn now`)
+            }
+            },1000)
+           
+        }
+        );
+
+
+
+        Mypromise.then(function(res){
+            alert(res)
+        });
+    }
+
+   
+    function startVaccination(queue){
+        queue.shift();
+
+        vaccine_count--
+
+        console.log(vaccine_count)
+
+        
+
+        if(queue.length===0){
+            clearInterval(interval);
+        }
+        console.log("queue",queue)
+
+        
+    }
+
+    
+
+    if(vaccine_count==0){
+            alert ("Vaccine is Not Availaible")
+        }
+       
+
+    let interval = setInterval(startVaccination,2000);
+
+   // function
+</script>
